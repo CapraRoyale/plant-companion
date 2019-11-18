@@ -1,3 +1,7 @@
 MVP.md
 node_modules
+<<<<<<< HEAD
 src/firebaseConfig.js
+=======
+src/firebaseConfig.js
+>>>>>>> 65a786ed1d3f7c5a784b0d8ced866d8725b172ce
