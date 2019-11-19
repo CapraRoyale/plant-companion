@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import * as ROUTES from "../../constants/routes";
 
@@ -10,23 +10,41 @@ const SignUpPage = () => (
   </div>
 );
 
+const state = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  error: null,
+};
+
 class SignUpForm extends Component {
+
   constructor(prop) {
     super(prop);
+    this.state = { ...state }
   }
   onSubmit = event => {
 
   }
 
   onChange = event => {
-
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
-    return(
-    <form onSubmit={this.onSubmit}>
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      error
+    } = this.state
 
-    </form>
+    return (
+      <form onSubmit={this.onSubmit}>
+
+      </form>
     )
   }
 }
