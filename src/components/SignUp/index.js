@@ -3,15 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose"
 
 import * as ROUTES from "../../constants/routes";
-// import { FirebaseContext } from "../Firebase";
 import { withFirebase } from "../Firebase"
 
 const SignUpPage = () => (
   <div>
     <h1>Create a Garden</h1>
-    {/* <FirebaseContext.Consumer>
-      {firebase => <SignUpForm firebase={firebase} />}
-    </FirebaseContext.Consumer> */}
     <SignUpForm />
   </div>
 );
@@ -26,11 +22,6 @@ const state = {
 };
 
 class SignUpFormBase extends Component {
-
-  constructor(prop) {
-    super(prop);
-    this.state = { ...state }
-  }
   onSubmit = event => {
     const { firstName, lastName, email, passwordOne } = this.state;
 
@@ -117,10 +108,7 @@ const SignInLink = () => (
   </p>
 );
 
-const SignUpForm = compose(
-  withRouter,
-  withFirebase,
-)(SignUpFormBase);
+const SignUpForm = withRouter(SignUpFormBase);
 
 export default SignUpPage;
 

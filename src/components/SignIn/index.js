@@ -81,10 +81,7 @@ const SignUpLink = () => (
     </p>
 );
 
-const SignInForm = compose(
-    withRouter,
-    withFirebase,
-)(SignInFormBase);
+const SignInForm = withRouter(SignInFormBase);
 
 export default SignInPage
 

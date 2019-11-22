@@ -13,6 +13,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 
+console.log(process.env)
 const App = () => (
     <Router>
         <div>

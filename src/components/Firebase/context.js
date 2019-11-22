@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpPage from "../SignUp/index"
+import SignUpPage from "../SignUp/"
 import SignInPage from "../SignIn"
 const FirebaseContext = React.createContext(null);
 
@@ -7,10 +7,7 @@ const FirebaseContext = React.createContext(null);
 export const withFirebase = Component => props => (
   <div>
     <FirebaseContext.Consumer>
-      {firebase => <SignUpPage {...props} firebase={firebase} />}
-    </FirebaseContext.Consumer>
-    <FirebaseContext.Consumer>
-      {firebase => <SignInPage {...props} firebase={firebase} />}
+      {firebase => <Component {...props} firebase={firebase} />}
     </FirebaseContext.Consumer>
   </div>
 )
