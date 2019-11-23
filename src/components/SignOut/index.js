@@ -6,4 +6,5 @@ const SignOut = () => (
     </div>
 );
 
+
 export default SignOut;
