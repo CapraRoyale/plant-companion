@@ -5,12 +5,11 @@ import { compose } from "recompose"
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 
-// const SignUpPage = () => (
-//   <div>
-//     <h1>Create a Garden</h1>
-//     <SignUpForm />
-//   </div>
-// );
+const SignUpPage = () => (
+  <div>
+    <h1>Create a Garden</h1>
+  </div>
+);
 
  
 export default class SignUpFormBase extends Component {
@@ -30,16 +29,14 @@ export default class SignUpFormBase extends Component {
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        console.log(authUser)
+        
         // this.setState({ ...state });
-        // this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         console.log(error)
-        // this.setState({ error })
+        this.setState({ error })
       });
-
-   
   }
 
   onChange = event => {
@@ -98,11 +95,11 @@ export default class SignUpFormBase extends Component {
   }
 }
 
-// const SignInLink = () => (
-//   <p>
-//     Already Have An Account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-//   </p>
-// );
+const SignInLink = () => (
+  <p>
+    Already Have An Account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+  </p>
+);
 
 // const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 

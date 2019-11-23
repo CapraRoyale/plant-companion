@@ -1,8 +1,14 @@
 import React from 'react';
+import SignOutButton from "../SignOut"
 
 const Home = () => (
     <div>
-        <h1>Home</h1>
+        <div>
+            <SignOutButton />
+        </div>
+        <div>
+            <h1>My Garden</h1>
+        </div>
     </div>
 );
 
