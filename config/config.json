@@ -1,0 +1,14 @@
+{
+    "development": {
+        "username": "root",
+        "password": "J5uNJ3yu*#LX4P34",
+        "database": "plant_and_companion",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "production": {
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
+    }
+}
