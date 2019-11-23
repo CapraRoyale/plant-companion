@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import FirebaseContext from './context';
-import Firebase from './firebase';
-import {withFirebase} from 'react-redux-firebase';
-export default Firebase;
-export { FirebaseContext, withFirebase };
-=======
 // import FirebaseContext, { withFirebase } from './context';
 // import Firebase from './firebase';
 // export default Firebase;
@@ -23,4 +16,3 @@ const config = {
 firebase.initializeApp(config);
 
 export { firebase }
->>>>>>> 7608a3daefc0ab3c04802b5fdb1dad8497c31170
