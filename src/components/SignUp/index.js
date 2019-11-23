@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose"
+import { Link } from "react-router-dom";
+// import { compose } from "recompose"
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
@@ -17,6 +17,7 @@ const SignInLink = () => (
   </p>
 );
 
+
 export default class SignUpFormBase extends Component {
 
   state = {
@@ -29,13 +30,13 @@ export default class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const { firstName, lastName, email, password } = this.state;
+    const { email, password } = this.state;
     console.log('CREATING USER')
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
 
-        // this.setState({ ...state });
+        this.setState({});
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
@@ -65,6 +66,7 @@ export default class SignUpFormBase extends Component {
 
     return (
       <div>
+        <SignUpPage />
         <form onSubmit={this.onSubmit}>
           <input
             name="firstName"

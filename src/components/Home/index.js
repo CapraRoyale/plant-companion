@@ -3,9 +3,7 @@ import SignOutButton from "../SignOut"
 
 const Home = () => (
     <div>
-        <div>
-            <SignOutButton />
-        </div>
+        <SignOutButton />
         <div>
             <h1>My Garden</h1>
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose"
+import { Link } from "react-router-dom";
+// import { compose } from "recompose"
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
@@ -8,7 +8,6 @@ import { firebase } from "../Firebase";
 const SignInPage = () => (
     <div>
         <h1>Sign In</h1>
-        <SignUpLink />
     </div>
 );
 
@@ -53,6 +52,7 @@ export default class SignInFormBase extends Component {
 
         return (
             <div>
+                <SignInPage />
                 <form onSubmit={this.onSubmit}>
                     <input
                         name="email"
