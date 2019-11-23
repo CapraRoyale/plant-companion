@@ -30,8 +30,9 @@ export default class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const {firstName, lastName, email, password } = this.state;
     console.log('CREATING USER')
+    console.log(this.state)
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {

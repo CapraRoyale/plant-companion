@@ -12,7 +12,8 @@ function SignOutButton({ firebase }) {
         console.log("button clicked")
         auth.signOut()
         .then(function () {
-            this.props.history.push(ROUTES.LANDING)
+            console.log("made it this far")
+            window.location.pathname = ROUTES.LANDING
         }).catch(function (error) {
             // An error happened.
         });

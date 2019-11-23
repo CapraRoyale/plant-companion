@@ -6,6 +6,7 @@ const Home = () => (
         <SignOutButton />
         <div>
             <h1>My Garden</h1>
+            
         </div>
     </div>
 );
