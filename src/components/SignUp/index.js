@@ -11,7 +11,12 @@ const SignUpPage = () => (
   </div>
 );
 
- 
+const SignInLink = () => (
+  <p>
+    Already Have An Account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+  </p>
+);
+
 export default class SignUpFormBase extends Component {
 
   state = {
@@ -21,7 +26,7 @@ export default class SignUpFormBase extends Component {
     password: '',
     error: null
   };
-  
+
   onSubmit = event => {
     event.preventDefault();
     const { firstName, lastName, email, password } = this.state;
@@ -29,7 +34,7 @@ export default class SignUpFormBase extends Component {
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        
+
         // this.setState({ ...state });
         this.props.history.push(ROUTES.HOME);
       })
@@ -59,47 +64,47 @@ export default class SignUpFormBase extends Component {
       password === ''
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="firstName"
-          value={firstName}
-          onChange={this.onChange}
-          type="text"
-          placeholder="First Name"
-        />
-        <input
-          name="lastName"
-          value={lastName}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Last Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="text"
-        />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="firstName"
+            value={firstName}
+            onChange={this.onChange}
+            type="text"
+            placeholder="First Name"
+          />
+          <input
+            name="lastName"
+            value={lastName}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Last Name"
+          />
+          <input
+            name="email"
+            value={email}
+            onChange={this.onChange}
+            type="text"
+            placeholder="Email"
+          />
+          <input
+            name="password"
+            value={password}
+            onChange={this.onChange}
+            type="text"
+          />
+          <button disabled={isInvalid} type="submit">Sign Up</button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p>{error.message}</p>}
+        </form>
+        <SignInLink />
+      </div>
+
     )
   }
 }
 
-const SignInLink = () => (
-  <p>
-    Already Have An Account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-  </p>
-);
+
 
 // const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 

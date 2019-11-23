@@ -71,9 +71,7 @@ export default class SignInFormBase extends Component {
                     <button disabled={isInvalid} type="submit">Sign In</button>
                     {error && <p>{error.message}</p>}
                 </form>
-                <p>
-                    Don't Have An Accout? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-                </p>
+                <SignUpLink />
             </div>
         )
     }
