@@ -30,13 +30,13 @@ export default class SignUpFormBase extends Component {
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        console.log(authUser)
+        
         // this.setState({ ...state });
-        // this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
         console.log(error)
-        // this.setState({ error })
+        this.setState({ error })
       });
 
    
