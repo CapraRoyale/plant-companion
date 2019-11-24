@@ -4,7 +4,7 @@ import * as ROUTES from "../../constants/routes";
 
 const Logo = () => (
   <Link to={ROUTES.LANDING}>
-    <img src="../../../public/assets/images/plant-companion-logo.svg" alt="logo" />
+    <img src="../assets/images/plant-companion-logo-sm.png" alt="logo" />
   </Link>
 )
 
