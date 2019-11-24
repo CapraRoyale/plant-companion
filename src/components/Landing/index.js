@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../Navigation'
 import { Link } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes'
+import "./style.css";
 
 const Landing = () => (
 

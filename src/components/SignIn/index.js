@@ -6,6 +6,8 @@ import {auth, provider} from '../Firebase'
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 
+import "./style.css";
+
 const SignInPage = () => (
     <div>
         <h1>Sign In</h1>

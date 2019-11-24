@@ -1,6 +1,7 @@
 import React from 'react';
 import SignOutButton from "../SignOut"
 import styled from "styled-components"
+import "./style.css";
 
 
 const Title = styled.h1`
