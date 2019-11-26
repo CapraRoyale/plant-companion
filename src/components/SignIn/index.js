@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose"
+import { Link } from "react-router-dom";
+// import { compose } from "recompose"
+import {auth, provider} from '../Firebase'
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 
-// const SignInPage = () => (
-//     <div>
-//         <h1>Sign In</h1>
-//         <SignUpLink />
-//     </div>
-// );
+const SignInPage = () => (
+    <div>
+        <h1>Sign In</h1>
+    </div>
+);
 
-
+const SignUpLink = () => (
+    <p>
+        Don't Have An Accout? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    </p>
+);
 
 export default class SignInFormBase extends Component {
 
@@ -26,7 +30,7 @@ export default class SignInFormBase extends Component {
         event.preventDefault();
         const { email, password } = this.state;
         console.log('SIGNING IN USER')
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
             .then(() => {
                 // this.setState({ ...state });
                 this.props.history.push(ROUTES.HOME)
@@ -34,7 +38,6 @@ export default class SignInFormBase extends Component {
             .catch(error => {
                 this.setState({ error })
             });
-
 
     };
 
@@ -48,33 +51,33 @@ export default class SignInFormBase extends Component {
         const isInvalid = password === '' || email === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <input
-                    name="email"
-                    value={email}
-                    onChange={this.onChange}
-                    type="text"
-                    placeholder="Email Address"
-                />
-                <input
-                    name="password"
-                    value={password}
-                    onChange={this.onChange}
-                    type="text"
-                />
+            <div>
+                <SignInPage />
+                <form onSubmit={this.onSubmit}>
+                    <input
+                        name="email"
+                        value={email}
+                        onChange={this.onChange}
+                        type="text"
+                        placeholder="Email Address"
+                    />
+                    <input
+                        name="password"
+                        value={password}
+                        onChange={this.onChange}
+                        type="text"
+                    />
 
-                <button disabled={isInvalid} type="submit">Sign In</button>
-                {error && <p>{error.message}</p>}
-            </form>
+                    <button disabled={isInvalid} type="submit">Sign In</button>
+                    {error && <p>{error.message}</p>}
+                </form>
+                <SignUpLink />
+            </div>
         )
     }
 }
 
-// const SignUpLink = () => (
-//     <p>
-//         Don't Have An Accout? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-//     </p>
-// );
+
 
 // const SignInForm = withRouter(SignInFormBase);
 
