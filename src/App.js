@@ -12,12 +12,13 @@ import HomePage from './components/Home';
 import AccountPage from './components/Account';
 import AdminPage from './components/Admin';
 import * as ROUTES from './constants/routes';
+import Logo from '../logo'
 
 console.log(process.env)
 const App = () => (
     <Router>
         <div>
-            <Navigation />
+            <Logo />
             <hr />
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
