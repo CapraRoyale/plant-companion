@@ -71,6 +71,7 @@ export default class SignUpFormBase extends Component {
       <div>
         {/* <Navigation /> */}
         <LogoCondensed />
+        <hr/>
         <SignUpPage />
         
         <form onSubmit={this.onSubmit}>

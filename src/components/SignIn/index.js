@@ -56,6 +56,7 @@ export default class SignInFormBase extends Component {
         return (
             <div>
                 <LogoCondensed />
+                <hr/>
                 <SignInPage />
                 <form onSubmit={this.onSubmit}>
                     <input
