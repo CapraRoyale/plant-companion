@@ -12,14 +12,11 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
-import Logo from "../logo"
-import CondensedLogo from '../logocondensed'
-import { Link } from 'react-router-dom'
+import Logo from "../Logo"
 
 console.log(process.env)
 const App = () => (
     <Router>
-
         <div>
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
