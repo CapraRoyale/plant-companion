@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { compose } from "recompose"
-import {auth, provider} from '../Firebase'
+import { auth, provider } from '../Firebase'
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
+import LogoCondensed from '../logocondensed'
 
 import "./style.css";
 
@@ -54,6 +55,7 @@ export default class SignInFormBase extends Component {
 
         return (
             <div>
+                <LogoCondensed />
                 <SignInPage />
                 <form onSubmit={this.onSubmit}>
                     <input

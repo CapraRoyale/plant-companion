@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 
 const SignUpButton = () => (
   <button>
-    <Link to={ROUTES.SIGN_UP} />
+    <Link to={ROUTES.SIGN_UP}>
+      Sign Up
+    </Link>
   </button>
 );
 

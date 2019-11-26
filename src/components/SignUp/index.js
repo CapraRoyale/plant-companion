@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 import Navigation from '../Navigation'
+import LogoCondensed from "../logocondensed";
+
 // import GoogleAuthButton from '../Google Auth'
 
 
@@ -68,6 +70,7 @@ export default class SignUpFormBase extends Component {
     return (
       <div>
         {/* <Navigation /> */}
+        <LogoCondensed />
         <SignUpPage />
         
         <form onSubmit={this.onSubmit}>

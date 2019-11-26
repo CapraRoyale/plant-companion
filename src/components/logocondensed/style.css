@@ -1,6 +1,6 @@
 img {
-  width: 400px;
-  height: 200px;
-  margin: 0;
+  width: 200px;
+  height: auto;
+  margin: 10px auto;
   padding: 0;
 }
