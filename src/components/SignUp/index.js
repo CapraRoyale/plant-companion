@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
+import Navigation from '../Navigation'
+// import GoogleAuthButton from '../Google Auth'
+
 
 const SignUpPage = () => (
   <div>
@@ -30,9 +33,7 @@ export default class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    const {firstName, lastName, email, password } = this.state;
-    console.log('CREATING USER')
-    console.log(this.state)
+    const { firstName, lastName, email, password } = this.state;
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
@@ -41,7 +42,6 @@ export default class SignUpFormBase extends Component {
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
-        console.log(error)
         this.setState({ error })
       });
   }
@@ -67,7 +67,9 @@ export default class SignUpFormBase extends Component {
 
     return (
       <div>
+        {/* <Navigation /> */}
         <SignUpPage />
+        
         <form onSubmit={this.onSubmit}>
           <input
             name="firstName"
@@ -101,6 +103,7 @@ export default class SignUpFormBase extends Component {
           {error && <p>{error.message}</p>}
         </form>
         <SignInLink />
+        {/* <GoogleAuthButton /> */}
       </div>
 
     )

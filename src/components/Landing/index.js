@@ -7,14 +7,10 @@ import "./style.css";
 const Landing = () => (
 
     <div>
+        <hr/>
         <h1>Landing</h1>
         <div>
-            <button>
-                <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-            </button>
-            <button>
-                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-            </button>
+            
         </div>
     </div>
 

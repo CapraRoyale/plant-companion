@@ -13,13 +13,21 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 import Logo from "../logo"
+import CondensedLogo from '../logocondensed'
+import { Link } from 'react-router-dom'
 
 console.log(process.env)
 const App = () => (
     <Router>
+
         <div>
-            <Logo />
-            <hr />
+            <CondensedLogo />
+            <button>
+                <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+            </button>
+            <button>
+                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+            </button>
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
             <Route path={ROUTES.SIGN_IN} component={SignInPage} />
