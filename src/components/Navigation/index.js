@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SignOutButton from "../SignOut"
 import * as ROUTES from '../../constants/routes';
-import "./style.css";
+//import './index.css';
+
+
+
 const Navigation = () => (
     <div>
         <ul>
@@ -20,5 +23,25 @@ const Navigation = () => (
             </li>
         </ul>
     </div>
+    
+    
+
 );
+
+
+   
+
+
+
+
+
+
 export default Navigation;
+
+{/* <Navbar bg="light">
+<Navbar.Brand href="#home">Brand link</Navbar.Brand>
+</Navbar>
+<br />
+<Navbar bg="light">
+<Navbar.Brand>Brand text</Navbar.Brand>
+</Navbar> */}
