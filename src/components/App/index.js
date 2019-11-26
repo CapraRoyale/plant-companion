@@ -12,7 +12,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
-import Logo from "../logo"
+import Logo from "../Logo"
 
 console.log(process.env)
 const App = () => (
