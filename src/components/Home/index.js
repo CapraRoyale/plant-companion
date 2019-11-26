@@ -6,7 +6,7 @@ function Home() {
 
     <div>
       <link href="components/home/css/index.css" rel="stylesheet" />
-      <h1> plant and companion</h1>
+      <h1>Plant and Companion</h1>
 
       <form className="searchform">
         <input type="text" placeholder="Search..." name="search" />
