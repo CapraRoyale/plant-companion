@@ -15,4 +15,11 @@ const config = {
 
 firebase.initializeApp(config);
 
+//<<<<<<< HEAD
 export { firebase }
+//=======
+const provider = new firebase.auth.GoogleAuthProvider()
+const auth = firebase.auth()
+
+export { firebase, provider, auth }
+//>>>>>>> 3afcf5f061a1d0323a1b7bb13d233d438c3b250d
