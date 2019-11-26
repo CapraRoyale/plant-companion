@@ -5,7 +5,9 @@ import * as ROUTES from '../../constants/routes'
 import "./style.css";
 import SignInButton from '../SignInButton';
 import SignUpButton from '../SignUpButton';
-import LogoCondensed from '../logocondensed'
+import LogoCondensed from '../logocondensed';
+import Logo from '../logo'
+import GoogleAuth from '../Google Auth'
 
 const Landing = () => (
 
@@ -15,7 +17,7 @@ const Landing = () => (
         <SignUpButton />
         <hr/>
         <div>
-            
+            <Logo />
         </div>
     </div>
 
