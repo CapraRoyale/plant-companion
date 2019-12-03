@@ -8,15 +8,10 @@ module.exports = function(sequelize, DataTypes) {
   Garden.associate = function(models) {
     // When a Garden is deleted, delete any associated tasks
     Garden.belongsToMany(models.plant, {
-      // onDelete: "cascade"
+      onDelete: "cascade",
       through: 'userPlants',
-      as: 'gardenPlants'
     });
-    Garden.belongsTo(models.User, {
-      // onDelete: "cascade"
-      // as: 'gardenPlants',
-      
-    });
+    Garden.belongsTo(models.User);
   };
 
   return Garden;
