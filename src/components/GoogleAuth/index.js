@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-// import { compose } from "recompose"
 
 import * as ROUTES from "../../constants/routes";
 import * as firebase from "firebase";
-import { renderComponent } from 'recompose';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { firebaseReducer } from 'react-redux-firebase';
 
- export default class GooggleAuthButton extends Component {
+export default class GooggleAuthButton extends Component {
 
   // This is our firebaseui configuration object
   uiConfig = {
     signInFlow: "redirect",
     signInSuccessUrl: "/home",
-    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+    signInOptions: [
+    {
+      provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      prompt: "select_account"
+    }],
+
 
   };
   render() {
@@ -25,7 +28,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
     )
   }
 
- }
+}
 
 
   // (

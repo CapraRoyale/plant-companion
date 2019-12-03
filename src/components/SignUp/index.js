@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { compose } from "recompose"
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 import Navigation from '../Navigation'
 import LogoCondensed from "../logocondensed";
+import GoogleAuthButton from '../GoogleAuth'
 
 // import GoogleAuthButton from '../Google Auth'
 
@@ -100,14 +100,14 @@ export default class SignUpFormBase extends Component {
             name="password"
             value={password}
             onChange={this.onChange}
-            type="text"
+            type="password"
           />
           <button disabled={isInvalid} type="submit">Sign Up</button>
 
           {error && <p>{error.message}</p>}
         </form>
+        <GoogleAuthButton />
         <SignInLink />
-        {/* <GoogleAuthButton /> */}
       </div>
 
     )

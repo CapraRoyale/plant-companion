@@ -1,6 +1,5 @@
 import React from 'react';
 import SignOutButton from "../SignOut"
-import styled from "styled-components"
 import "./style.css";
 import LogoCondensed from '../logocondensed'
 
