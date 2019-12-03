@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './style.css';
 
 function Home () {
     return (
@@ -32,18 +32,18 @@ function Home () {
 
 export default Home;
 
-{/* card template to use for plant listing*/}
+// {/* card template to use for plant listing*/}
 
-{/* <Card>
-  <Card.Header as="h5">Featured</Card.Header>
-  <Card.Body>
-    <Card.Title>Special title treatment</Card.Title>
-    <Card.Text>
-      With supporting text below as a natural lead-in to additional content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card> */}
+// {/* <Card>
+//   <Card.Header as="h5">Featured</Card.Header>
+//   <Card.Body>
+//     <Card.Title>Special title treatment</Card.Title>
+//     <Card.Text>
+//       With supporting text below as a natural lead-in to additional content.
+//     </Card.Text>
+//     <Button variant="primary">Go somewhere</Button>
+//   </Card.Body>
+// </Card> */}
 // ______________________________
 
 // collapsing button for information on plant card:
