@@ -7,7 +7,7 @@ import SignInButton from '../SignInButton';
 import SignUpButton from '../SignUpButton';
 import LogoCondensed from '../logocondensed';
 import Logo from '../logo'
-import GoogleAuth from '../Google Auth'
+import GoogleAuth from '../GoogleAuth'
 
 const Landing = () => (
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { compose } from "recompose"
 import { auth, provider } from '../Firebase'
+import GoogleAuthButton from '../GoogleAuth'
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
@@ -14,6 +15,8 @@ const SignInPage = () => (
         <h1>Sign In</h1>
     </div>
 );
+
+
 
 const SignUpLink = () => (
     <p>
@@ -56,7 +59,7 @@ export default class SignInFormBase extends Component {
         return (
             <div>
                 <LogoCondensed />
-                <hr/>
+                <hr />
                 <SignInPage />
                 <form onSubmit={this.onSubmit}>
                     <input
@@ -76,7 +79,9 @@ export default class SignInFormBase extends Component {
                     <button disabled={isInvalid} type="submit">Sign In</button>
                     {error && <p>{error.message}</p>}
                 </form>
+                <GoogleAuthButton />
                 <SignUpLink />
+
             </div>
         )
     }
