@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     plant.associate = function (models) {
         // associations can be defined here
-        plant.belongsToMany(plant, { as: 'Friend', through: 'good_comp', foreignKey: "helpee", otherkey: "helper" });
-        plant.belongsToMany(plant, { as: 'Foe', through: 'bad_comp', foreignKey: "hinderee", otherKey: "hinderer" });
+        plant.belongsToMany(models.plant, { as: 'Friend', through: 'good_comp', foreignKey: "helpee", otherkey: "helper" });
+        plant.belongsToMany(models.plant, { as: 'Foe', through: 'bad_comp', foreignKey: "hinderee", otherKey: "hinderer" });
+        plant.belongsToMany(models.my_garden, {through: 'user'});
     };
     return plant;
 };
