@@ -22,6 +22,9 @@ const Landing = () => (
 
 export default Landing;
 
+// super bitchin' simple search code
+// https://codepen.io/hoehoe/pen/dReKLX
+
 {/* card template to use for plant listing*/}
 
 {/* <Card>
