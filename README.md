@@ -1,18 +1,40 @@
-# Project 3 - Plant Companion
+# Plant & Companion
 
-## Full-Stack Web App - M.E.R.N.
+## A full-stack **M.E.R.N.** _(MySql, Express, React & NodeJS)_
 
-***
+### Structure:
+ - MySql database with Sequelize ORM
+ - Express
 
-* **MySQL** - *non-relational, document-based database*
-* **Express** - *NodeJS library for web server*
-* **React** - *Javascript framework for web apps*
-* **NodeJS** - *Server-side javscript engine*
 
-***
+### Getting Started:
+<!--  -->
 
-* ReactJs
-* Node and Express
-* MySQL with Sequelize
-* Have GET & POST routes
-* Deployed to Heroku
+### Code Explanation:
+<!--  -->
+
+### Authors
+
+[Scarlett](https://github.com/llamadu) - _Front-end Project Manager, coding_
+
+[Siege](https://github.com/CapraRoyale) - _Back-end Project Manager, coding_
+
+[Sam](https://github.com/samsmeyer17) - _Design & Authorization, coding_
+
+[Anbesajer](https://github.com/ambesa) - _Design & Layout, coding_
+
+### License
+<!--  -->
+### Acknowledgments & Support
+
+#### TAs - [Catherine Pham](https://github.com/CrypticWoodWhite), [Benjamin Vaagen](https://github.com/benvaagen)
+
+#### Teacher - [Arron Linton](https://github.com/ArronJLinton)
+
+Progress Log:
+
+[ ] - 
+
+[ ] - 
+
+[ ] - 

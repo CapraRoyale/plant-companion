@@ -1,1 +1,4 @@
 MVP.md
+node_modules
+src/firebaseConfig.js
+.env
