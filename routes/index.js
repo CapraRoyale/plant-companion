@@ -1,9 +1,9 @@
-var db = require("../db/models");
+const db = require("../db/models");
 
 module.exports = function (app) {
 
   // Route for creating a user
-  app.post("/api/users", function (req, res) {
+  app.post("/api/user", function (req, res) {
     db.User.create(req.body)
     .then(dbUser => res.json(dbUser))
     .catch(err => res.status(401).json(err))
