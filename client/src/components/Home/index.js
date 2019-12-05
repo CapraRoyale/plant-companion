@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./style.css";
 import LogoCondensed from '../logocondensed';
-import Logo from '../logo'
 import PlantCard from '../PlantCard'
 import API from '../../utils/API';
 import SignOutButton from '../SignOut'

@@ -29,3 +29,4 @@ function PlantCard(props) {
   );
 }
 
+export default PlantCard;
