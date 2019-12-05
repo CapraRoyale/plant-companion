@@ -60,6 +60,7 @@ class Landing extends Component {
         <Logo />
         {this.state.plants.map(plant => (
           <PlantCard
+            key={plant.id}
             name={plant.name}
             desc={plant.desc}
             misc={plant.misc}

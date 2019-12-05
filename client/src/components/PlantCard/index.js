@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 
 function PlantCard({ name, desc, misc }) {
 
@@ -13,10 +12,9 @@ function PlantCard({ name, desc, misc }) {
         </h3>
       </div>
       <div className='card-body'>{desc}
-        <div className='description'>
+        <div>
           {misc}
         </div>
-
       </div>
     </div>
   );
