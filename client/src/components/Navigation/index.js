@@ -11,25 +11,6 @@ const Navigation = () => (
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </button>
     </div>
-
-
-
 );
 
-
-
-
-
-
-
-
-
 export default Navigation;
-
-{/* <Navbar bg="light">
-<Navbar.Brand href="#home">Brand link</Navbar.Brand>
-</Navbar>
-<br />
-<Navbar bg="light">
-<Navbar.Brand>Brand text</Navbar.Brand>
-</Navbar> */}
