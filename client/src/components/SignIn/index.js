@@ -71,6 +71,7 @@ export default class SignInFormBase extends Component {
                         value={password}
                         onChange={this.onChange}
                         type="password"
+                        placeholder="Password"
                     />
 
                     <button disabled={isInvalid} type="submit">Sign In</button>

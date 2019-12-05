@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import './style.css';
+import Button from '../Home/index'
 
 function PlantCard({ name, desc, misc }) {
 
   return (
+<<<<<<< HEAD
     <div class="mui--z1">
       <div className="card md-12">
         <div className='card-header'>
@@ -19,7 +21,23 @@ function PlantCard({ name, desc, misc }) {
           </div>
 
         </div>
+=======
+    <div className="card md-12">
+      <div className='card-header'>
+        <h3>
+          <strong>
+            <i aria-hidden='true' />{name}
+          </strong>
+        </h3>
       </div>
+      <div className='card-body'>
+        <div><strong>Description: </strong>{desc}</div>
+        
+        <div><strong>Growing Information: </strong>{misc}
+        </div>
+>>>>>>> daa6a0639db80500d4f269efa87340284bea8db6
+      </div>
+      {/* <Button /> */}
     </div>
   );
 }

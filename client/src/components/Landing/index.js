@@ -57,9 +57,10 @@ class Landing extends Component {
         <SignInButton />
         <SignUpButton />
         <hr />
-        <Logo />
+        <Logo className='logo' />
         {this.state.plants.map(plant => (
           <PlantCard
+            key={plant.id}
             name={plant.name}
             desc={plant.desc}
             misc={plant.misc}
