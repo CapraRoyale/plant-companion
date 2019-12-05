@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { compose } from "recompose"
-import { auth, provider } from '../Firebase'
+import { auth } from '../Firebase'
 import GoogleAuthButton from '../GoogleAuth'
 
 import * as ROUTES from "../../constants/routes";
-import { firebase } from "../Firebase";
 import LogoCondensed from '../logocondensed'
 
 import "./style.css";
@@ -35,7 +33,6 @@ export default class SignInFormBase extends Component {
     onSubmit = event => {
         event.preventDefault();
         const { email, password } = this.state;
-        console.log('SIGNING IN USER')
         auth.signInWithEmailAndPassword(email, password)
             .then(() => {
                 // this.setState({ ...state });

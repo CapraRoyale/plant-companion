@@ -1,7 +1,3 @@
-// import FirebaseContext, { withFirebase } from './context';
-// import Firebase from './firebase';
-// export default Firebase;
-// export { FirebaseContext, withFirebase };
 import * as firebase from "firebase"
 
 const config = {
