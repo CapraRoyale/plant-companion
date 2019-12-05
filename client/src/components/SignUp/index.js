@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
-import Navigation from '../Navigation'
 import LogoCondensed from "../logocondensed";
-import GoogleAuthButton from '../GoogleAuth'
+import GoogleAuthButton from '../GoogleAuth';
 
 // import GoogleAuthButton from '../Google Auth'
 
@@ -40,7 +39,8 @@ export default class SignUpFormBase extends Component {
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
 
-        this.setState({});
+
+        // this.setState({});
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
