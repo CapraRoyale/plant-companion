@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import './style.css';
+import Button from '../Home/index'
 
 function PlantCard({ name, desc, misc }) {
 
@@ -12,12 +13,13 @@ function PlantCard({ name, desc, misc }) {
           </strong>
         </h3>
       </div>
-      <div className='card-body'>{desc}
-        <div className='description'>
-          {misc}
+      <div className='card-body'>
+        <div><strong>Description: </strong>{desc}</div>
+        
+        <div><strong>Growing Information: </strong>{misc}
         </div>
-
       </div>
+      {/* <Button /> */}
     </div>
   );
 }
