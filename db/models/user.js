@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const user = sequelize.define('user', {
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    myGardenId: DataTypes.STRING
-  }, {});
-  user.associate = function(models) {
-    // associations can be defined here
-  };
-  return user;
-=======
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
@@ -40,5 +26,4 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   return User;
->>>>>>> 5696fd778d99d75436cb55b778be86b59d9a44ac
 };
