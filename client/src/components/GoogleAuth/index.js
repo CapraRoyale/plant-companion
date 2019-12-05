@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
-import * as ROUTES from "../../constants/routes";
 import * as firebase from "firebase";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { firebaseReducer } from 'react-redux-firebase';
 
 export default class GooggleAuthButton extends Component {
 

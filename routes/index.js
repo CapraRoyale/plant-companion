@@ -38,4 +38,11 @@ module.exports = function (app) {
       .then((result) => res.json(result))
       .catch(err => res.status(401).json(err))
   });
+
+  app.get('/api/plant', (req, res) => {
+    db.plant.findAll({})
+      .then(results => res.json(results))
+      .catch(err => res.status(401).json(err))
+  });
 };
+
