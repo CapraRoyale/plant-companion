@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, provider} from '../Firebase'
+import { auth } from '../Firebase'
 import * as ROUTES from "../../constants/routes"
 
 // import { withFirebase } from "../Firebase"
