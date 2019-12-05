@@ -73,7 +73,7 @@ export default class SignInFormBase extends Component {
                         name="password"
                         value={password}
                         onChange={this.onChange}
-                        type="text"
+                        type="password"
                     />
 
                     <button disabled={isInvalid} type="submit">Sign In</button>
