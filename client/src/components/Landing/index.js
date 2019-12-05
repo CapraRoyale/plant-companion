@@ -1,29 +1,84 @@
-import React from 'react';
-import Navigation from '../Navigation'
+import React, { Component } from 'react';
 import "./style.css";
 import SignInButton from '../SignInButton';
 import SignUpButton from '../SignUpButton';
 import LogoCondensed from '../logocondensed';
 import Logo from '../logo'
-import GoogleAuth from '../GoogleAuth'
+import PlantCard from '../PlantCard'
+import API from '../../utils/API';
 
-const Landing = () => (
+// const Landing = () => (
 
-    <div>
+//     <div>
+//         <LogoCondensed />
+//         <SignInButton />
+//         <SignUpButton />
+//         <hr/>
+//         <div>
+//             <Logo />
+//         </div>
+//     </div>
+// );
+
+class Landing extends Component {
+  state = {
+    plants: [],
+    q: '',
+    message: ''
+  };
+
+  componentDidMount() {
+    // TODO: API call to 
+    this.getPlants()
+    console.log(this.state.plants)
+  }
+
+  getPlants = () => {
+    API.getPlants()
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          plants: res.data
+        })
+      }
+      )
+      .catch(() =>
+        this.setState({
+          plants: [],
+          message: 'You Got No Plants'
+        })
+      );
+  }
+
+  render() {
+    return (
+      <div>
         <LogoCondensed />
         <SignInButton />
         <SignUpButton />
-        <hr/>
-        <div>
-            <Logo />
-        </div>
-    </div>
+        <hr />
+        <Logo />
+        {this.state.plants.map(plant => (
+          <PlantCard
+            name={plant.name}
+            desc={plant.desc}
+            misc={plant.misc}
+          />
+        ))}
 
-);
+
+      </div>
+    )
+  }
+
+}
 
 export default Landing;
 
-{/* card template to use for plant listing*/}
+// super bitchin' simple search code
+// https://codepen.io/hoehoe/pen/dReKLX
+
+{/* card template to use for plant listing*/ }
 
 {/* <Card>
   <Card.Header as="h5">Featured</Card.Header>
@@ -41,7 +96,7 @@ export default Landing;
 
 // function Example() {
 //     const [open, setOpen] = useState(false);
-  
+
 //     return (
 //       <>
 //         <Button
@@ -61,6 +116,6 @@ export default Landing;
 //       </>
 //     );
 //   }
-  
+
 //   render(<Example />);
 

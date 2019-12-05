@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 import LogoCondensed from "../logocondensed";
 import GoogleAuthButton from '../GoogleAuth';
+import axios from 'axios';
+import createUser from '../../utils/API'
 
 // import GoogleAuthButton from '../Google Auth'
 
@@ -38,8 +39,6 @@ export default class SignUpFormBase extends Component {
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-
-
         // this.setState({});
         this.props.history.push(ROUTES.HOME);
       })
@@ -69,7 +68,6 @@ export default class SignUpFormBase extends Component {
 
     return (
       <div>
-        {/* <Navigation /> */}
         <LogoCondensed />
         <hr/>
         <SignUpPage />
