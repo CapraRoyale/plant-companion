@@ -6,6 +6,8 @@ import LogoCondensed from '../logocondensed';
 import Logo from '../logo'
 import PlantCard from '../PlantCard'
 import API from '../../utils/API';
+import { Link } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes'
 
 // const Landing = () => (
 
@@ -49,7 +51,16 @@ class Landing extends Component {
         })
       );
   }
-
+  handlePlantSave = id => {
+    const plant = this.state.plants.find(plant => plant.id === id);
+    API.addToGarden({
+      plantId: plant.id,
+      // name: plant.name,
+      // desc: plant.desc,
+      // misc: plant.misc,
+      userId: 1
+    }).then(() => this.getPlants());
+  };
   render() {
     return (
       <div>
@@ -58,14 +69,22 @@ class Landing extends Component {
         <SignUpButton />
         <hr />
         <Logo className='logo' />
+        <button className="backtohomebtn">
+          <Link to={ROUTES.HOME}>Head back to the Garden!!</Link>
+        </button>
+
+        
         {this.state.plants.map(plant => (
           <PlantCard
             key={plant.id}
             name={plant.name}
             desc={plant.desc}
             misc={plant.misc}
+            plantId={plant.id}
+            buttonText="Add To Garden"
+            handlePlantSave={this.handlePlantSave}
           />
-        ))}
+        ))};
 
 
       </div>

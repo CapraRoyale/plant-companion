@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export default {
   // Create a User via google or email/password signin
   createUser: (data) => {
@@ -10,13 +9,17 @@ export default {
   searchPlant: (plant) => {
     return axios.get(`/api/plant/${plant}`);
   },
+  
+    addPlant: (plant) => {
+      return axios.post(`/api/plant/${plant}`)
+    },
   // Add to User Garden
   addToGarden: (data) => {
-    return axios.get("/api/garden/", data);
+    return axios.post("/api/garden/", data);
   },
   // Get User Garden
   getUserGarden: (gardenId) => {
-    return axios.delete(`/api/garden/${gardenId}`);
+    return axios.get("/api/garden/3");
   },
   getPlants: (data) => {
     return axios.get('/api/plant')

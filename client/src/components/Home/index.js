@@ -13,44 +13,44 @@ class Home extends Component {
         message: ''
     };
     componentDidMount() {
+        console.log(this.state.plants)
         // TODO: API call to 
         this.getPlants()
     }
 
     getPlants = () => {
-        API.getPlants()
+        API.getUserGarden()
             .then(res => {
                 console.log(res.data)
                 this.setState({
-                    plants: res.data
+                    plants: res.data.plants
                 })
-            }
-            )
+            })
             .catch(() =>
                 this.setState({
                     plants: [],
                     message: 'You Got No Plants'
                 })
             );
-    }
+    };
 
     handlePlantSave = id => {
         const plant = this.state.plants.find(plant => plant.id === id);
-        API.searchPlant({
+        API.addPlant({
             plantId: plant.id,
             name: plant.name,
             desc: plant.desc,
             misc: plant.misc
-
-        });
-    }
+        }).then(() => this.getPlants());
+    };
 
     handlePlantClick = event => {
         event.preventDefault();
-        // this.getPlants()
-    }
+        this.getPlants();
+    };
 
     render() {
+        console.log(this.state.plants)
         return (
             <div>
                 <LogoCondensed />
@@ -61,31 +61,23 @@ class Home extends Component {
                     <h1>Save Your Plants Here!</h1>
                 </strong>
 
-                <hr/>
-
-                {this.state.plants.map(plant => (
-                    <PlantCard
-                        key={plant.id}
-                        name={plant.name}
-                        desc={plant.desc}
-                        misc={plant.misc}
-                        Button={() => (
-                            <button 
-                            onClick={() => this.handlePlantSave(plant.id)
-                            .then(() => this.handlePlantClick())}
-                            className="btn btn-primary ml-2">
-                                Add Plant
-                            </button>
-                        )}
-                        
-                    />
-                ))}
-
-
+                <hr />
+        
+                        {this.state.plants.map(plant => (
+                            <PlantCard
+                                key={plant.id}
+                                name={plant.name}
+                                desc={plant.desc}
+                                misc={plant.misc}
+                                plantId={plant.id}
+                                buttonText='Remove'
+                                handlePlantSave={this.handlePlantSave}
+                            />
+                        ))}
+     
             </div>
         )
     }
-
 }
 
 export default Home;
