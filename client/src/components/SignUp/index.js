@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import * as ROUTES from "../../constants/routes";
 import { firebase } from "../Firebase";
 import LogoCondensed from "../logocondensed";
 import GoogleAuthButton from '../GoogleAuth';
+import axios from 'axios';
+import createUser from '../../utils/API'
 
 
 const SignUpPage = () => (
