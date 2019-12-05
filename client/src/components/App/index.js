@@ -15,7 +15,6 @@ import PrivateRoute from '../PrivateRoute';
 import Home from '../Home';
 import { app } from 'firebase';
 
-console.log(process.env)
 
 // export default class App extends Component {
 //     state = { loading: true, authenticated: false, user: null };
