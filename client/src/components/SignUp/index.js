@@ -7,8 +7,6 @@ import GoogleAuthButton from '../GoogleAuth';
 import axios from 'axios';
 import createUser from '../../utils/API'
 
-// import GoogleAuthButton from '../Google Auth'
-
 
 const SignUpPage = () => (
   <div>
@@ -39,7 +37,12 @@ export default class SignUpFormBase extends Component {
     firebase
       .auth().createUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        // this.setState({});
+        this.setState({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password
+        });
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
@@ -69,9 +72,9 @@ export default class SignUpFormBase extends Component {
     return (
       <div>
         <LogoCondensed />
-        <hr/>
+        <hr />
         <SignUpPage />
-        
+
         <form onSubmit={this.onSubmit}>
           <input
             name="firstName"
@@ -111,136 +114,3 @@ export default class SignUpFormBase extends Component {
     )
   }
 }
-
-
-
-// const SignUpForm = withRouter(withFirebase(SignUpFormBase));
-
-// export default SignUpPage;
-
-// export { SignUpForm, SignInLink };
-
-// template code from https://serverless-stack.com/chapters/create-the-signup-form.html :
-
-// import React, { useState } from "react";
-// import {
-//   HelpBlock,
-//   FormGroup,
-//   FormControl,
-//   ControlLabel
-// } from "react-bootstrap";
-// import LoaderButton from "../components/LoaderButton";
-// import { useFormFields } from "../libs/hooksLib";
-// import "./Signup.css";
-
-// export default function Signup(props) {
-//   const [fields, handleFieldChange] = useFormFields({
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//     confirmationCode: ""
-//   });
-//   const [newUser, setNewUser] = useState(null);
-//   const [isLoading, setIsLoading] = useState(false);
-
-//   function validateForm() {
-//     return (
-//       fields.email.length > 0 &&
-//       fields.password.length > 0 &&
-//       fields.password === fields.confirmPassword
-//     );
-//   }
-
-//   function validateConfirmationForm() {
-//     return fields.confirmationCode.length > 0;
-//   }
-
-//   async function handleSubmit(event) {
-//     event.preventDefault();
-
-//     setIsLoading(true);
-
-//     setNewUser("test");
-
-//     setIsLoading(false);
-//   }
-
-//   async function handleConfirmationSubmit(event) {
-//     event.preventDefault();
-
-//     setIsLoading(true);
-//   }
-
-//   function renderConfirmationForm() {
-//     return (
-//       <form onSubmit={handleConfirmationSubmit}>
-//         <FormGroup controlId="confirmationCode" bsSize="large">
-//           <ControlLabel>Confirmation Code</ControlLabel>
-//           <FormControl
-//             autoFocus
-//             type="tel"
-//             onChange={handleFieldChange}
-//             value={fields.confirmationCode}
-//           />
-//           <HelpBlock>Please check your email for the code.</HelpBlock>
-//         </FormGroup>
-//         <LoaderButton
-//           block
-//           type="submit"
-//           bsSize="large"
-//           isLoading={isLoading}
-//           disabled={!validateConfirmationForm()}
-//         >
-//           Verify
-//         </LoaderButton>
-//       </form>
-//     );
-//   }
-
-//   function renderForm() {
-//     return (
-//       <form onSubmit={handleSubmit}>
-//         <FormGroup controlId="email" bsSize="large">
-//           <ControlLabel>Email</ControlLabel>
-//           <FormControl
-//             autoFocus
-//             type="email"
-//             value={fields.email}
-//             onChange={handleFieldChange}
-//           />
-//         </FormGroup>
-//         <FormGroup controlId="password" bsSize="large">
-//           <ControlLabel>Password</ControlLabel>
-//           <FormControl
-//             type="password"
-//             value={fields.password}
-//             onChange={handleFieldChange}
-//           />
-//         </FormGroup>
-//         <FormGroup controlId="confirmPassword" bsSize="large">
-//           <ControlLabel>Confirm Password</ControlLabel>
-//           <FormControl
-//             type="password"
-//             onChange={handleFieldChange}
-//             value={fields.confirmPassword}
-//           />
-//         </FormGroup>
-//         <LoaderButton
-//           block
-//           type="submit"
-//           bsSize="large"
-//           isLoading={isLoading}
-//           disabled={!validateForm()}
-//         >
-//           Signup
-//         </LoaderButton>
-//       </form>
-//     );
-//   }
-
-//   return (
-//     <div className="Signup">
-//       {newUser === null ? renderForm() : renderConfirmationForm()}
-//     </div>
-//   );
-// }

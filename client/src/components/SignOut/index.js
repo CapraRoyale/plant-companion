@@ -2,8 +2,6 @@ import React from 'react';
 import { auth} from '../Firebase'
 import * as ROUTES from "../../constants/routes"
 
-// import { withFirebase } from "../Firebase"
-
 function SignOutButton({ firebase }) {
     function signOut(event) {
         event.preventDefault()
@@ -20,9 +18,5 @@ function SignOutButton({ firebase }) {
         </button>
     )
 }
-
-
-
-
 
 export default SignOutButton;
