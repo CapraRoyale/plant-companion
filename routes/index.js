@@ -32,11 +32,17 @@ module.exports = function (app) {
   // Route for adding a plant to a garden
   app.post("/api/garden", (req, res) => {
     console.log(req.body)
-    db.Garden.findOrCreate({ where: { UserId: req.body.gardenId } })
-      .then(() => db.Garden.findById(req.body.gardenId))
+    db.Garden.findById(3)
       .then(dbGarden => dbGarden.addPlant(req.body.plantId))
       .then((result) => res.json(result))
       .catch(err => res.status(401).json(err))
+  });
+  
+  app.post("/garden", (req, res) => {
+    console.log(req.body)
+    db.Garden.create({ UserId: 1})
+      .then((dbGarden) => res.json(dbGarden))
+      .catch(err => console.log(err))
   });
 
   // route for getting all plants
