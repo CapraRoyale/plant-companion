@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css'
 
 function PlantCard({ name, desc, misc }) {
 
@@ -11,11 +12,15 @@ function PlantCard({ name, desc, misc }) {
           </strong>
         </h3>
       </div>
-      <div className='card-body'>{desc}
-        <div>
-          {misc}
+      <div className='card-body'>
+        <div><strong>Description: </strong>{desc}</div>
+        
+        <div><strong>Growing Information: </strong>{misc}
         </div>
       </div>
+      <button>Click To Add Plant To Garden!
+        
+      </button>
     </div>
   );
 }
