@@ -11,8 +11,5 @@ const Navigation = () => (
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </button>
     </div>
-
-
-
 );
 export default Navigation;

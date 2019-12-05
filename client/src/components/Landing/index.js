@@ -16,7 +16,6 @@ const Landing = () => (
             <Logo />
         </div>
     </div>
-
 );
 
 export default Landing;
