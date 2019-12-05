@@ -12,7 +12,6 @@ class Home extends Component {
         q: '',
         message: ''
     };
-
     componentDidMount() {
         // TODO: API call to 
         this.getPlants()
@@ -35,6 +34,22 @@ class Home extends Component {
             );
     }
 
+    handlePlantSave = id => {
+        const plant = this.state.plants.find(plant => plant.id === id);
+        API.searchPlant({
+            plantId: plant.id,
+            name: plant.name,
+            desc: plant.desc,
+            misc: plant.misc
+
+        });
+    }
+
+    handlePlantClick = event => {
+        event.preventDefault();
+        // this.getPlants()
+    }
+
     render() {
         return (
             <div>
@@ -54,6 +69,15 @@ class Home extends Component {
                         name={plant.name}
                         desc={plant.desc}
                         misc={plant.misc}
+                        Button={() => (
+                            <button 
+                            onClick={() => this.handlePlantSave(plant.id)
+                            .then(() => this.handlePlantClick())}
+                            className="btn btn-primary ml-2">
+                                Add Plant
+                            </button>
+                        )}
+                        
                     />
                 ))}
 

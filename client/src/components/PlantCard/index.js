@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './style.css'
+import './style.css';
+import Button from '../Home/index'
 
 function PlantCard({ name, desc, misc }) {
 
@@ -18,9 +19,7 @@ function PlantCard({ name, desc, misc }) {
         <div><strong>Growing Information: </strong>{misc}
         </div>
       </div>
-      <button>Click To Add Plant To Garden!
-        
-      </button>
+      {/* <Button /> */}
     </div>
   );
 }
