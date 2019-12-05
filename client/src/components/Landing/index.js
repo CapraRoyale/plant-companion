@@ -9,19 +9,6 @@ import API from '../../utils/API';
 import { Link } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes'
 
-// const Landing = () => (
-
-//     <div>
-//         <LogoCondensed />
-//         <SignInButton />
-//         <SignUpButton />
-//         <hr/>
-//         <div>
-//             <Logo />
-//         </div>
-//     </div>
-// );
-
 class Landing extends Component {
   state = {
     plants: [],
