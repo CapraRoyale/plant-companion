@@ -40,7 +40,11 @@ export default class SignUpFormBase extends Component {
       .then(authUser => {
 
 
-        // this.setState({});
+        this.setState({
+          firstName: firstName,
+          lastName: lastName,
+          email: email
+        });
         this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {
@@ -71,9 +75,9 @@ export default class SignUpFormBase extends Component {
       <div>
         {/* <Navigation /> */}
         <LogoCondensed />
-        <hr/>
+        <hr />
         <SignUpPage />
-        
+
         <form onSubmit={this.onSubmit}>
           <input
             name="firstName"
