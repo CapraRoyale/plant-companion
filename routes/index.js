@@ -39,6 +39,7 @@ module.exports = function (app) {
       .catch(err => res.status(401).json(err))
   });
 
+  // route for getting all plants
   app.get('/api/plant', (req, res) => {
     db.plant.findAll({})
       .then(results => res.json(results))
