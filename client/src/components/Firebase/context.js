@@ -1,6 +1,4 @@
 import React from 'react';
-import SignUpPage from "../SignUp/"
-import SignInPage from "../SignIn"
 const FirebaseContext = React.createContext(null);
 
 
