@@ -37,6 +37,14 @@ module.exports = function (app) {
       .then((result) => res.json(result))
       .catch(err => res.status(401).json(err))
   });
+
+  app.delete('/api/garden', (req, res) => {
+    console.log(req.body)
+    db.Garden.findById(3)
+      .then(dbGarden => dbGarden.deletePlant(req.body.plantId))
+      .then((result) => res.json(result))
+      .catch(err => res.status(401).json(err))
+  });
   
   app.post("/garden", (req, res) => {
     console.log(req.body)

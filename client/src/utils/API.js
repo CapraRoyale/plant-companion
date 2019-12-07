@@ -10,9 +10,9 @@ export default {
     return axios.get(`/api/plant/${plant}`);
   },
   
-    addPlant: (plant) => {
+  addPlant: (plant) => {
       return axios.post(`/api/plant/${plant}`)
-    },
+  },
   // Add to User Garden
   addToGarden: (data) => {
     return axios.post("/api/garden/", data);
@@ -23,5 +23,8 @@ export default {
   },
   getPlants: (data) => {
     return axios.get('/api/plant')
+  },
+  deletePlant: (data) => {
+    return axios.delete("/api/garden/", data);
   }
 };

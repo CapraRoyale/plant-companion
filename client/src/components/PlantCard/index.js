@@ -23,8 +23,9 @@ function PlantCard(props) {
         </div>
 
       </div>
-      <button onClick={() => props.handlePlantSave(props.plantId)}>
+      <button onClick={() =>  props.handlePlantSave(props.plantId)}>
         {props.buttonText}</button>
+
     </div>
   );
 }
