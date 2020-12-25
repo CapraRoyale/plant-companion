@@ -35,11 +35,11 @@ class Home extends Component {
 
     handlePlantSave = id => {
         const plant = this.state.plants.find(plant => plant.id === id);
-        API.addPlant({
+        API.deletePlant({
             plantId: plant.id,
-            name: plant.name,
-            desc: plant.desc,
-            misc: plant.misc
+            // name: plant.name,
+            // desc: plant.desc,
+            // misc: plant.misc
         }).then(() => this.getPlants());
     };
 
@@ -73,7 +73,6 @@ class Home extends Component {
                                 handlePlantSave={this.handlePlantSave}
                             />
                         ))}
-     
             </div>
         )
     }
